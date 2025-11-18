@@ -11,10 +11,10 @@ from datetime import datetime
 st.sidebar.title("Configuration OpenAI")
 api_key = st.sidebar.text_input("Clé API OpenAI :", type="password")
 
-if api_key:
-    client = OpenAI(api_key="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")
-else:
-    client = None
+# Récupère la clé automatiquement depuis Streamlit Cloud
+api_key = st.secrets["openai"]["api_key"]  # <-- sécurisée
+
+client = OpenAI(api_key=api_key)
 
 # ===== Dossier temporaire =====
 UPLOAD_FOLDER = "cv_uploads"
