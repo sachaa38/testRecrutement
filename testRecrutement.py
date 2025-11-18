@@ -11,8 +11,8 @@ from datetime import datetime
 st.sidebar.title("Configuration OpenAI")
 api_key = st.sidebar.text_input("Clé API OpenAI :", type="password")
 
-# Récupère la clé automatiquement depuis Streamlit Cloud
-api_key = st.secrets["openai"]["api_key"]  # <-- sécurisée
+# # Récupère la clé automatiquement depuis Streamlit Cloud
+# api_key = st.secrets["openai"]["api_key"]  # <-- sécurisée
 
 client = OpenAI(api_key=api_key)
 
